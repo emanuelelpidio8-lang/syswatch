@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Monitor — Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <header>
+        <div class="logo">
+            <span class="logo-dot"></span>
+            MINI MONITOR
+        </div>
+        <div class="status-pill" id="connection-status">
+            <span class="pulse"></span> conectando...
+        </div>
+    </header>
+
+    <main>
+        <!-- Cards de métricas -->
+        <section class="cards">
+            <div class="card">
+                <div class="card-label">CPU</div>
+                <div class="card-value" id="cpu-value">--</div>
+                <canvas id="cpu-chart"></canvas>
+            </div>
+            <div class="card">
+                <div class="card-label">MEMÓRIA</div>
+                <div class="card-value" id="mem-value">--</div>
+                <canvas id="mem-chart"></canvas>
+            </div>
+            <div class="card">
+                <div class="card-label">DISCO</div>
+                <div class="card-value" id="disk-value">--</div>
+                <canvas id="disk-chart"></canvas>
+            </div>
+            <div class="card">
+                <div class="card-label">PROCESSOS</div>
+                <div class="card-value" id="proc-value">--</div>
+                <div class="card-sub" id="proc-sub">ativos no sistema</div>
+            </div>
+        </section>
+
+        <!-- Tabela de processos -->
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Top Processos por Memória</h2>
+                <span class="panel-badge" id="process-count-badge">0</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>NOME</th>
+                        <th>CPU %</th>
+                        <th>MEMÓRIA %</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="process-table-body">
+                    <tr><td colspan="5" class="loading">Carregando...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <span>Mini Monitor · FastAPI + psutil + Chart.js</span>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
