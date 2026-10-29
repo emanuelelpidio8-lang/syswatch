@@ -1,5 +1,8 @@
 \# 🖥️ SysWatch — Monitoramento de Servidor em Tempo Real
 
+## 🌐 Demo Ao Vivo
+
+[▶️ Acessar o dashboard](https://syswatch-yt0t.onrender.com/)
 
 
 Dashboard web para monitorar e gerenciar processos de um servidor em tempo real. Coleta métricas de CPU, memória, disco e processos diretamente do sistema operacional e exibe em uma interface moderna com atualização automática a cada 2 segundos.
